@@ -57,4 +57,15 @@ public class Example {
         );
         System.out.println("Summ = " + summ);
     }
+
+    /**
+     * Пишет в файл строку. Если файла нет, то он создаётся.
+     */
+    public static void example4(String patch, String filename) throws FileNotFoundException
+    {
+        File file = new File(patch+filename);
+        PrintWriter pw = new PrintWriter(file);
+        pw.println("Test line 1.");
+        pw.close();
+    }
 }
