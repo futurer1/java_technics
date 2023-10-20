@@ -3,6 +3,7 @@ package file_process;
 import java.io.Serializable;
 
 public class TestData implements Serializable {
+    private static final long serialVersionUID = 2323232323L; // версия структуры объекта. При изменении стуктуры необходимо менять версию.
     private int id;
     private String name;
     private transient String password; // Поле, значение которого не будет сериализовываться. Ему будет присвоено значение null
