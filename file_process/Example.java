@@ -68,4 +68,44 @@ public class Example {
         pw.println("Test line 1.");
         pw.close();
     }
+
+    /**
+     * Сериализация объекта в файл
+     */
+    public static void example5(String patch, String filename)
+    {
+        TestData obj1 = new TestData(1, "Vasya");
+        TestData obj2 = new TestData(2, "Petya");
+
+        try {
+            FileOutputStream os = new FileOutputStream(patch + filename);
+            ObjectOutputStream oos = new ObjectOutputStream(os);
+
+            oos.writeObject(obj1);
+            oos.writeObject(obj2);
+            os.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Десериализация объекта из файла
+     */
+    public static void example6(String patch, String filename)
+    {
+        try {
+            FileInputStream fis = new FileInputStream(patch + filename);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            TestData obj1 = (TestData) ois.readObject();
+            TestData obj2 = (TestData) ois.readObject();
+            fis.close();
+
+            System.out.println(obj1);
+            System.out.println(obj2);
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
