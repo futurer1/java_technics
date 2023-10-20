@@ -108,4 +108,93 @@ public class Example {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Сериализация отдельно кол-ва объектов и самих объектов в файл
+     */
+    public static void example7(String patch, String filename)
+    {
+
+        TestData[] allData = {
+            new TestData(1, "Vasya"),
+            new TestData(2, "Petya"),
+            new TestData(3, "Igor")
+        };
+
+        try {
+            FileOutputStream os = new FileOutputStream(patch + filename);
+            ObjectOutputStream oos = new ObjectOutputStream(os);
+
+            oos.writeInt(allData.length);
+            for (TestData data: allData) {
+                oos.writeObject(data);
+            }
+            os.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Десереализация объектов из файла в массив объектов
+     */
+    public static void example8(String patch, String filename)
+    {
+        try {
+            FileInputStream fis = new FileInputStream(patch + filename);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            int length = ois.readInt();
+            TestData[] allData = new TestData[length];
+
+            System.out.println(length);
+            for (int i = 0; i < length; i++) {
+                allData[i] = (TestData) ois.readObject();
+                System.out.println(allData[i]);
+            }
+            fis.close();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Сериализация массива объектов в файл
+     */
+    public static void example9(String patch, String filename)
+    {
+
+        TestData[] allData = {
+                new TestData(1, "Vasya"),
+                new TestData(2, "Petya"),
+                new TestData(3, "Igor")
+        };
+
+        try {
+            FileOutputStream os = new FileOutputStream(patch + filename);
+            ObjectOutputStream oos = new ObjectOutputStream(os);
+            oos.writeObject(allData);
+            os.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Десереализация массива объектов
+     */
+    public static void example10(String patch, String filename)
+    {
+        try {
+            FileInputStream fis = new FileInputStream(patch + filename);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            TestData[] allData = (TestData[]) ois.readObject(); // downcasting object
+            System.out.println(Arrays.toString(allData));
+
+            fis.close();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
