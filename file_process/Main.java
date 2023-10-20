@@ -19,5 +19,7 @@ public class Main {
         Example.example2(p, "log1.log");
         Example.example3(p, "log2.log");
         Example.example4(p, "log3.log");
+        Example.example5(p, "data.bin");
+        Example.example6(p, "data.bin");
     }
 }
