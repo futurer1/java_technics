@@ -21,5 +21,9 @@ public class Main {
         Example.example4(p, "log3.log");
         Example.example5(p, "data.bin");
         Example.example6(p, "data.bin");
+        Example.example7(p, "data1.bin");
+        Example.example8(p, "data1.bin");
+        Example.example9(p, "data2.bin");
+        Example.example10(p, "data2.bin");
     }
 }
