@@ -1,9 +1,11 @@
-package advanced1;
+package stack;
 
 import java.util.Stack;
 
 public class StackExample {
     public static void main(String[] args) {
+
+        // стек LIFO (last in first out)
         Stack<Integer> myStack = new Stack<>();
 
         myStack.push(1);
