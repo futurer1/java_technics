@@ -22,7 +22,7 @@ public class Thread2 {
 
 class MyThread2 extends Thread {
     /**
-     * условие работы потока. Значение не кешируется.
+     * условие работы потока. Значение volatile, поэтому не кешируется.
      */
     private volatile boolean running = true;
 
