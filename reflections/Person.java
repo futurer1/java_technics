@@ -2,7 +2,6 @@
 public class Person {
     private int id;
     private String name;
-
     public int num;
 
     public Person() {
@@ -41,5 +40,14 @@ public class Person {
 
     public void setNum(int num) {
         this.num = num;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", num=" + num +
+                '}';
     }
 }
