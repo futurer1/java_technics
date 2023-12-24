@@ -1,4 +1,12 @@
-// primitive Streams
+package java_technics.interview;
+
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        // primitive Streams
         System.out.println("\nPrimitive Streams");
 
         Integer intStreamValue = IntStream.range(1, 10).sum();
@@ -8,3 +16,6 @@
                 .boxed()
                 .toList();
         System.out.println(listValue);
+
+    }
+}
