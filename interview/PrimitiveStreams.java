@@ -2,7 +2,7 @@ package java_technics.interview;
 
 import java.util.*;
 
-public class Test {
+public class PrimitiveStreams {
 
     public static void main(String[] args) {
 
