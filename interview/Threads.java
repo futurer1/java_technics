@@ -2,6 +2,16 @@ package java_technics.interview;
 
 import java.util.*;
 
+/**
+ * https://wuciawe.github.io/jvm/2017/02/13/notes-on-concurrency-in-jvm.html
+ * https://habr.com/ru/company/otus/blog/353414/
+ * https://www.youtube.com/watch?v=CgRJUqO-dMQ
+ * https://www.youtube.com/watch?v=arGcok_I_DY&list=WL&index=7
+ * https://www.youtube.com/watch?v=mf4lC6TpclM
+ * https://www.youtube.com/watch?v=noDnSV7NCtw
+ * https://www.youtube.com/watch?v=Ky1_5mabd18
+ */
+
 public class Threads {
 
     public static void main(String[] args) {
