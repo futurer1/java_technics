@@ -3,4 +3,6 @@
 
 throw new RuntimeException; // в ходе работы программы можно кинуть исключение, например, при возникновении нежелательных условий
 
-ArithmeticException ошибка при выполнении арифметического вычисления (например, с попыткой целочисленного деления на нуль). Класс ArithmeticalException унаследован от RuntimeException
+throw new ArithmeticException; //ошибка при выполнении арифметического вычисления (например, с попыткой целочисленного деления на нуль). Класс ArithmeticalException унаследован от RuntimeException
+
+throw new ArrayIndexOutOfBoundsException; // индекс массива, не принадлежит допустимому диапазону
