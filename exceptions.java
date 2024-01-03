@@ -8,3 +8,5 @@ throw new ArithmeticException; //ошибка при выполнении ари
 throw new ArrayIndexOutOfBoundsException; // индекс массива, не принадлежит допустимому диапазону
 
 throw new ClassCastException; // Выполнена неверная операция преобразования типов (ошибка приведения типов).
+
+throw new IllegalArgumentException; // Методу передано неверное значение аргумента (например, отрицательное, когда метод предполагает задание положительных значений).
