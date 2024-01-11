@@ -1,6 +1,6 @@
 ## Stream API
 
-Ресурс: [](https://struchkov.dev/blog/ru/java-stream-api/)
+[Ресурс](https://struchkov.dev/blog/ru/java-stream-api/)
 
 Стрим не меняет исходные данные, он формирует новую структуру данных.
 
