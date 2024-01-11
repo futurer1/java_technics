@@ -1,6 +1,6 @@
 ## Stream API
 
-[Полезный ресурс про Stream API]([url](https://struchkov.dev/blog/ru/java-stream-api/)){:target="_blank"}
+<a href="https://struchkov.dev/blog/ru/java-stream-api/" target="_blank">Полезный ресурс про Stream API</a>
 
 Стрим не меняет исходные данные, он формирует новую структуру данных.
 
