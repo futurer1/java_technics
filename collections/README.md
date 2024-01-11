@@ -6,6 +6,8 @@ ArrayList<Integer> arrayList = new ArrayList<>();
 // Поиск O(1)
 // Вставка O(n)
 // Удаление O(n)
+
+List<String> places = Arrays.asList("One", "Two", "Three"); // initialization List immutable (!)
 ```
 
 ```java
