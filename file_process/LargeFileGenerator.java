@@ -24,7 +24,7 @@ public class LargeFileGenerator {
             System.out.printf("Begin step %s%n", i);
 
             long begin = System.currentTimeMillis();
-            writeFileBuffered(f, data);
+            writeFileNio(f, data);
             total += System.currentTimeMillis() - begin;
         }
         System.out.printf("Average time: %s ms%n.", total / stepCount);
@@ -52,5 +52,14 @@ public class LargeFileGenerator {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void writeFileNio(File f, String content) { // 210ms
+        try {
+            Files.writeString(Paths.get(f.toURI()), content, StandardOpenOption.CREATE);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
