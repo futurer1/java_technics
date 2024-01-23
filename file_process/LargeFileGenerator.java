@@ -24,7 +24,7 @@ public class LargeFileGenerator {
             System.out.printf("Begin step %s%n", i);
 
             long begin = System.currentTimeMillis();
-            writeFileSimple(f, data);
+            writeFileBuffered(f, data);
             total += System.currentTimeMillis() - begin;
         }
         System.out.printf("Average time: %s ms%n.", total / stepCount);
@@ -41,6 +41,14 @@ public class LargeFileGenerator {
     public void writeFileSimple(File f, String content) { // 1697 ms
         try (var fw = new FileWriter(f)) {
             fw.write(content);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void writeFileBuffered(File f, String content) { // 1820 ms
+        try (var bw = new BufferedWriter(new FileWriter(f))) {
+            bw.write(content);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
