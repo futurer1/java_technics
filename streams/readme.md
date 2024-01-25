@@ -143,4 +143,20 @@ list = stream.collect(
         (list, t) -> list.add(t), // определяем, как добавлять элементы
         (l1, l2) -> l1.addAll(l2) // и как объединять две структуры в одну
 );
+
+Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7);
+ArrayList<Integer> result = stream
+        .filter((v) -> v % 2 == 0)
+        .map((v) -> v * 2)
+        .collect(
+                // supplier: создает объект коллекции
+                ArrayList::new,
+
+                //accumulator: добавляет элемент в коллекцию
+                (ArrayList<Integer> integer, Integer integer2)-> integer.add(integer2),
+                
+                // combiner: бинарная функция, которая объединяет два объекта
+                (ArrayList<Integer> integer, ArrayList<Integer> integer2) -> integer.addAll(integer2) 
+        );
+System.out.println(result); // [4, 8, 12]
 ```
