@@ -110,6 +110,21 @@ List<String> sortedNames = names.stream()
 System.out.println(sortedNames); // prints ["Alice", "Bob", "Charlie", "David"]
 ```
 
+<a name="sorted1"></a>sorted
+```java
+// Сортировка по ключу
+map.entrySet()
+  .stream()
+  .sorted(Map.Entry.<String, Employee>comparingByKey())
+  .forEach(System.out::println);
+
+// Сортировка по значению
+map.entrySet()
+  .stream()
+  .sorted(Map.Entry.comparingByValue())
+  .forEach(System.out::println);
+```
+
 <a name="takeWhile"></a>takeWhile
 ```java
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
