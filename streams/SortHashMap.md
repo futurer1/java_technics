@@ -46,7 +46,7 @@ Map<Long, Integer> outputMap = inputMap.entrySet().stream()
 System.out.println(outputMap); // {0=1, 1=1, 2=1, 3=2, 4=2}
 ```
 
-Мапа в мапе
+Мапа в мапе:
 ```java
 HashMap<String, Integer> mapInner = new HashMap<>();
 mapInner.put("a", 10);
@@ -91,4 +91,6 @@ Map<String, String> res = myMap
                 )
         );
 System.out.println(res);
+// вывод
+// {c-14=one, d-16=one, b2-32=three, b-12=one, b1-22=two, c2-34=three, a1-20=two, a-10=one, a2-30=three, d2-36=three, c1-24=two, d1-26=two}
 ```
