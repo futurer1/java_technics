@@ -45,3 +45,50 @@ Map<Long, Integer> outputMap = inputMap.entrySet().stream()
 
 System.out.println(outputMap); // {0=1, 1=1, 2=1, 3=2, 4=2}
 ```
+
+Мапа в мапе
+```java
+HashMap<String, Integer> mapInner = new HashMap<>();
+mapInner.put("a", 10);
+mapInner.put("b", 12);
+mapInner.put("c", 14);
+mapInner.put("d", 16);
+
+HashMap<String, Integer> mapInner1 = new HashMap<>();
+mapInner1.put("a1", 20);
+mapInner1.put("b1", 22);
+mapInner1.put("c1", 24);
+mapInner1.put("d1", 26);
+
+HashMap<String, Integer> mapInner2 = new HashMap<>();
+mapInner2.put("a2", 30);
+mapInner2.put("b2", 32);
+mapInner2.put("c2", 34);
+mapInner2.put("d2", 36);
+
+HashMap<String, HashMap<String, Integer>> myMap = new HashMap<>();
+myMap.put("one", mapInner);
+myMap.put("two", mapInner1);
+myMap.put("three", mapInner2);
+
+
+Map<String, String> res = myMap
+        .entrySet()
+        .stream()
+        .flatMap(el -> {
+                    var key = el.getKey(); // "one", "two", "three"
+                    var innerMapValue = el.getValue();
+                    return innerMapValue
+                            .entrySet()
+                            .stream()
+                            .map(num -> Map.entry(num.getKey() + "-" + num.getValue(), key));
+
+                })
+        .collect(
+                Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue
+                )
+        );
+System.out.println(res);
+```
