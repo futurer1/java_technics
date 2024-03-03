@@ -7,9 +7,25 @@
 ```
 Assertions.assertThrows(IllegalArgumentException.class, () -> {
     MyObj obj = new MyObj();
-    obj.doSomthing();
+    obj.doSomething();
 });
 ```
+
+Библиотека для параметризованного теста:
+```
+junit-jupiter-params
+```
+
+Параметризированный тест выполняется так:
+```
+@ParametrizedTest
+@ValueSource(ints = {-1, 0, 100})
+public void myTest(int x) {
+    MyObj obj = new MyObj();
+    obj.doSomething1(x); // тест будет выполнен 3 раза с разным параметром x
+}
+```
+
 
 ## Assumptions 
 (предположения) предоставляет staticметоды для поддержки выполнения условного теста на основе предположений. Неуспешное предположение приводит к прерыванию теста.
