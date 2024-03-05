@@ -1,3 +1,6 @@
+Работа с консолью:
+https://github.com/futurer1/Linux/blob/master/Kafka.md
+
 
 Dependencies:
 ```groovy
