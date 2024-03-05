@@ -87,6 +87,10 @@ public class KafkaConfiguration {
         Map<String, Object> config = new HashMap<>();
 
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "2");
+        // другие параметры конфига
+        //...
+        //...
+        //...
 
         return config;
     }
