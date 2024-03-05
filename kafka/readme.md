@@ -13,3 +13,7 @@ implementation 'org.springframework.kafka:spring-kafka:3.1.1'
 // https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test
 testImplementation 'org.springframework.kafka:spring-kafka-test:3.1.1'
 ```
+
+Типы ошибок:
+- retryable error - ошибка, которая может быть устранена и возникла на время. То есть повтор операции может уже привести к успеху.
+- non-retryable - ошибка, которая стабильна и никуда не пропадёт при тех же параметрах вызова.
