@@ -20,3 +20,17 @@ testImplementation 'org.springframework.kafka:spring-kafka-test:3.1.1'
 Типы ошибок:
 - retryable error - ошибка, которая может быть устранена и возникла на время. То есть повтор операции может уже привести к успеху.
 - non-retryable - ошибка, которая стабильна и никуда не пропадёт при тех же параметрах вызова.
+
+
+Handler consumer для обработки входящих event:
+```java
+@Component
+@KafkaListener(topics = "product-added-event-topic") // класс сразу для всех типов событий в топике
+public class ProductAddedEventHandler {
+
+    @KafkaHandler
+    public void handle(ProductAddedEvent productAddedEvent) { // автоматом сюда будет mapping события этого объекта
+        // ...
+    }
+}
+```
