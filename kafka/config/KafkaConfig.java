@@ -92,6 +92,12 @@ public class KafkaConfiguration {
         //...
         //...
 
+        // В конфиг консьюмера добавляется следующее, чтобы он не падал при ошибке десереализации сообщений, а пропускал испорченные сообщения.
+        // Создание обертки ErrorHandlingDeserializer вокруг deserializer
+        config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class);
+        // десереализатор для корректных сообщений
+        config.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class);
+
         return config;
     }
 }
